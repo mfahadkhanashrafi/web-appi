@@ -1,0 +1,17 @@
+.imgLargeT {
+    background-color: #f8f8f8;
+    width: 750px ;
+    height: 532px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1 !important;
+  }
+  .slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 90% !important;
+    /* width: 90%; add by Fahad  */
+  }

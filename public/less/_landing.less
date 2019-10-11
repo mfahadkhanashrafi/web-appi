@@ -1,0 +1,133 @@
+.landing-page {
+	padding: 50px 0;
+	.inner-pages-box {
+		h6 {
+			background: #dcebfa;
+			padding: 12px 25px;
+			font-weight: bold;
+			margin:20px 0;
+		}
+		p {
+			padding: 10px 0px;
+		}
+		.inner-landing-content {	
+			.card-body {
+		    	padding: 0 24px 0 0 ;
+			}
+			.inner-landing-wrap {
+				margin: 40px 0;
+				border: 1px solid #dfdfdf;
+				box-shadow: 0px 0px 19px -2px #ceccec;
+				border-radius: 4px;
+				-webkit-transition: all .3s ease;
+				-moz-transition: all .3s ease;
+				-o-transition: all .3s ease;
+				transition: all .3s ease;
+				// &:hover {
+				// 	transform: translateY(-4px)!important;
+				// 	-webkit-transform: translateY(-4px)!important;
+				// 	box-shadow: 0 17px 25px rgba(0,0,0,.13)!important;
+				// 	-webkit-box-shadow: 0 17px 25px rgba(0,0,0,.13);
+				// 	-moz-box-shadow: 0 17px 25px rgba(0,0,0,.13);
+				// 	-o-box-shadow: 0 17px 25px rgba(0,0,0,.13);
+				// 	.inner-landing-wrap-img {
+				// 		img {
+				// 			transform:scale(1.2)
+				// 		}
+				// 	}
+				// }
+				.inner-landing-wrap-img {
+					overflow: hidden;
+					img {
+						-webkit-transition: all .3s ease;
+						-moz-transition: all .3s ease;
+						-o-transition: all .3s ease;
+						transition: all .3s ease;
+						width: 100%;
+					}
+				}
+				.inner-landing-wrap-txt{
+					h5 {
+						font-weight: bold;
+					}
+				}
+			}
+			.orLine {
+				position: relative;
+				&:after {
+					content: "";
+					width: auto;
+					height: 1px;
+					background: #d7d7d7;
+					position: absolute;
+					right: 0;
+					top: 18px;
+					left: 58px;
+				}
+			}
+		}
+		.table {
+			thead {
+				th {
+					border-bottom: 0;
+					border-top: 0;
+				}
+			}
+			td {
+				border-top: 1px solid #c2c2c2;
+			}
+		}
+	}
+	&.terrorism-insurance {
+		.inner-pages-box {
+			.inner-landing-content {
+				.inner-landing-wrap {
+					height: 100%;
+					margin: 0;
+					img {
+						width: 100%;
+					}
+					h5 {
+						text-align: center;
+						padding: 20px 20px 0 20px;
+					}
+					p {
+						text-align: center;
+						padding: 10px 20px 10px 20px;
+					}
+				}
+			}
+		}
+	}
+	&.fire-allied-perils-insurance {
+		.inner-pages-box {
+			.inner-landing-content {
+				.inner-landing-wrap {
+					height: 100%;
+    				margin: 0;
+					img {
+						width: 100%;
+					}
+					h5 {
+						text-align: center;
+						padding: 20px 20px 0 20px;
+					}
+					p {
+						text-align: center;
+    					padding: 10px 20px 10px 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+	.landing-page .inner-pages-box .inner-landing-content .card-body {
+	    padding: 30px;
+	}
+}

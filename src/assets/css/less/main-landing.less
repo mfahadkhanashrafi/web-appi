@@ -1,0 +1,270 @@
+@font-face {
+    font-family: 'Sailec';
+    src: url('../libs/fonts/Sailec.eot');
+    src: url('../libs/fonts/Sailec.eot?#iefix') format('embedded-opentype'),
+        url('../libs/fonts/Sailec.woff2') format('woff2'),
+        url('../libs/fonts/Sailec.woff') format('woff'),
+        url('../libs/fonts/Sailec.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Sailec';
+    src: url('../libs/fonts/Sailec-Bold.eot');
+    src: url('../libs/fonts/Sailec-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../libs/fonts/Sailec-Bold.woff2') format('woff2'),
+        url('../libs/fonts/Sailec-Bold.woff') format('woff'),
+        url('../libs/fonts/Sailec-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Sailec';
+    src: url('../libs/fonts/Sailec-Medium.eot');
+    src: url('../libs/fonts/Sailec-Medium.eot?#iefix') format('embedded-opentype'),
+        url('../libs/fonts/Sailec-Medium.woff2') format('woff2'),
+        url('../libs/fonts/Sailec-Medium.woff') format('woff'),
+        url('../libs/fonts/Sailec-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Conv_alqalam-fawad-light-regular-1';
+    src: url('alqalam-fawad-light-regular-1.eot');
+    src: local('☺'), url('alqalam-fawad-light-regular-1.woff') format('woff'), url('alqalam-fawad-light-regular-1.ttf') format('truetype'), url('alqalam-fawad-light-regular-1.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Conv_alqalam-fawad-bold-regular-1';
+    src: url('alqalam-fawad-bold-regular-1.eot');
+    src: local('☺'), url('alqalam-fawad-bold-regular-1.woff') format('woff'), url('alqalam-fawad-bold-regular-1.ttf') format('truetype'), url('alqalam-fawad-bold-regular-1.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+    font-family: 'Sailec';
+    margin: 0;
+}
+.mainLanding {
+    background-color: #353738;
+    min-height: 100%;
+    position: absolute;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: all 0.5s ease-in-out;
+    .changeBg {
+        background-color: #353738;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        transition: opacity 0.5s ease-in-out;
+        background-repeat: no-repeat;
+        background-size: cover;
+        opacity: 0;
+    }
+    .container {
+        // max-width: 1140px;
+        margin: 0 auto;
+        padding: 0 20px;
+        header {
+            text-align: center;
+            padding: 50px 0 70px 0;
+        }
+        section {
+            padding-bottom: 100px;
+            min-height: 520px;
+            .selectBoxes {
+                width: 47%;
+                max-width: 520px;
+                min-height: 480px;
+                display: inline-block;
+                text-align: center;
+                border-radius: 25px;
+                padding: 40px;
+                color: #fff;
+                transition: all 0.3s;
+                margin-top: 0;
+                text-decoration: none;
+                box-sizing: border-box;
+                h1{
+                    font-size: 40px;
+                    color: #fff;
+                    margin: 30px 0;
+                    font-weight: 400;
+                    strong {
+                        display: block;
+                    }
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 1.6;
+                }
+                span {
+                    font-size: 14px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    letter-spacing: 4px;
+                    position: relative;
+                    &:before {
+                        content: "";
+                        width: 17px;
+                        height: 8px;
+                        background: url(../images/arrow-white.png);
+                        position: absolute;
+                        right: -24px;
+                        top: 4px;
+                    }
+                }
+                &.conventionalBox {
+                    background-color: rgba(1,125,210,0.8);
+                    &:hover {
+                        background-color: rgb(1,125,210);
+                        margin-top: -15px;
+                        transition: all 0.3s;
+                    }
+                }
+                &.takafulBox {
+                    background-color: rgba(9,182,78,0.8);
+                    float: right;
+                    &:hover {
+                        background-color: rgb(9,182,78);
+                        margin-top: -15px;
+                        transition: all 0.3s;
+                    }
+                }
+                &:hover {
+                    span {
+                        // margin-left: -15px;
+                        &:before {
+                            content: "";
+                            right: -35px;
+                            transition: all 0.5s;
+                        }
+                    }
+                }
+            }
+        }
+        footer {
+            position: absolute;
+            width: 96%;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            color: #fff;
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+            .contact {
+                display: inline-block;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                li {
+                    display: inline-block;
+                    padding-right: 10px;
+                    a{
+                        text-decoration: none;
+                        color: #fff;
+                        img {
+                            padding-right: 5px;
+                        }
+                    }
+                }
+            }
+            .social {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                float: right;
+                li {
+                    display: inline-block;
+                    width: 16px;
+                    height: 16px;
+                    margin-left: 10px;
+                    a {
+                        text-decoration: none;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .footerBottom {
+                list-style: none;
+                margin: 10px 0 0 0;
+                padding: 2px 0 0 0;
+                border-top: 1px solid #fff;
+                font-size: 13px;
+                .Copyright {
+                    display: inline-block;
+                    padding: 10px 0;
+                }
+                .designBy {
+                    float: right;
+                    padding: 10px 0;
+                    filter: brightness(0) invert(1);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .mainLanding {
+        position: relative;        
+        .container {
+            section {
+                padding-bottom: 5%;
+                .selectBoxes {
+                    width: 100%;
+                    display: block;
+                    margin: 0 auto;
+                    &.conventionalBox {
+                        margin-bottom: 50px;
+                        &:hover {
+                            margin-top: 0;
+                        }
+                    }
+                    &.takafulBox {
+                        float: unset;
+                        &:hover {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+            footer {
+                position: relative;
+                padding-top: 50px;
+                .contact {
+                    display: block;
+                    max-width: 420px;
+                    margin: 0 auto;
+                }
+                .social {
+                    display: block;
+                    max-width: 160px;
+                    margin: 0 auto;
+                    float: unset;
+                    padding-top: 20px;
+                }
+                .footerBottom {
+                    text-align: center;
+                    .Copyright {
+                        display: block;
+                    }
+                    .designBy {
+                        display: block;
+                        float: unset;
+                        padding-top: 0px;
+                    }
+                }
+            }
+        }
+    }
+}
