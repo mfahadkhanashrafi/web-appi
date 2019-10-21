@@ -17,6 +17,10 @@ class ProductView extends Component {
         // console.log(this.props.item)
         this.setState({ modalVisibal: !modalVisibal })
     }
+    addCartHandler = (modalVisibality,itemDetail) =>{
+        console.log('Modal item detail',itemDetail)
+        this.setModalVisibal(modalVisibality)
+    }
 
     render() {
         const { modalVisibal } = this.state;
@@ -30,10 +34,9 @@ class ProductView extends Component {
                     <span onClick={() => this.setModalVisibal(modalVisibal)}>
                         <Modal isOpen={modalVisibal} toggle={!modalVisibal} className={'this.this.props.className'}>
                             <ModalBody>
-
                                 <div className="row">
                                     <div className="col-md-6" style={{ border: 'solid black' }}>
-                                        <ProductImage p_img={images} imagesArr={imagesArr} zoom={false} />
+                                        <ProductImage p_img={images} imagesArr={imagesArr} zoom={false} modal={true} />
                                     </div>
                                     <div className="col-md-6" style={{ border: 'solid red' }}>
                                         <p>{newProduct}</p>
@@ -41,11 +44,13 @@ class ProductView extends Component {
                                         <p>{brand}</p>
                                         <p>{price}</p>
                                         <p>{rating}</p>
-                                        <ButtonGroup>
-                                            <Button>Left</Button>
-                                            <Button>Middle</Button>
-                                            <Button>Right</Button>
-                                        </ButtonGroup>
+                                        <div>
+                                            <ul>
+                                                <li>...</li>
+                                                <li>...</li>
+                                                <li>...</li>
+                                            </ul>
+                                        </div>
                                         <Link
                                             to={{
                                                 pathname: `/details/${this.props.item.category.type}/${this.props.item.category.subCat}/${this.props.item.id}`,
@@ -61,7 +66,7 @@ class ProductView extends Component {
 
                             </ModalBody>
                             <ModalFooter>
-                                <Button color="primary" onClick={() => this.setModalVisibal(modalVisibal)}>Add to Cart</Button>
+                                <Button color="primary" onClick={() => this.addCartHandler(modalVisibal,this.props.item)}>Add to Cart</Button>
                             </ModalFooter>
                         </Modal>
                         {/* <Link

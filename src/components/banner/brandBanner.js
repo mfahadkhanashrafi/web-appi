@@ -40,7 +40,7 @@ let brandBanner = (props) => {
                     <h3>Up to 29% Discount on T-Shirts</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.</p>
                     <div className="all">
-                        <Link href="" className="color-black">Buy Now <i className="fal fa-long-arrow-right"></i></Link>
+                        <Link to="" className="color-black">Buy Now <i className="fal fa-long-arrow-right"></i></Link>
                     </div>
 
                 </div>

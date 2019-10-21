@@ -3,6 +3,31 @@ const fakeData = {
         //type: 'men', subCat: 'footwear',
         {
             id: 1,
+            name: 'Flipcart Img',
+            size: 'XL',
+            newProduct: true,
+            brand: 'Adidas',
+            price: 1500,
+            discount: 0,
+            rating: 3.5,
+            imagesArr: [
+                require('../assets/products/shoes-woman/fc.jpg'),
+                require('../assets/products/shoes-woman/fc2.jpg'),
+                require('../assets/products/shoes-woman/fc.jpg'),
+            ],
+            download:require('../assets/products/shoes-man/download.png'),
+
+            images: {
+                image1: require('../assets/products/shoes-woman/fc.jpg'),
+            },
+            category: {
+                type: 'men',
+                subCat: 'footwear',
+                deal: 'deals_tranding_clothes',
+            }
+        },
+        {
+            id: 1,
             name: 'Shoes One',
             size: 'XL',
             newProduct: true,
@@ -503,12 +528,13 @@ const fakeData = {
             discount: 3500,
             rating: 3.5,
             imagesArr: [
-                require('../assets/products/shoes-man/tshirts1.jpg'),
-                require('../assets/products/shoes-man/tshirts2.jpg'),
-                require('../assets/products/shoes-man/tshirts3.jpg'),
+                require('../assets/products/shoes-woman/sample-img-fornt.jpg'),
+                require('../assets/products/shoes-woman/sample-img-back.jpg'),
+                require('../assets/products/shoes-woman/sample-img-side-1.jpg'),
+                require('../assets/products/shoes-woman/sample-img-side-2.jpg'),
             ],
             images: {
-                image1: require('../assets/products/shoes-man/tshirts1.jpg'),
+                image1: require('../assets/products/shoes-woman/sample-img-fornt.jpg'),
             },
             category: {
                 type: 'men',

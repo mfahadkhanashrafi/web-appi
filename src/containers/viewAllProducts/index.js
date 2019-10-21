@@ -16,7 +16,7 @@ class ViewAllProduct extends Component {
     }
     render() {
         let products = this.props.location.state.products;
-
+        console.log('products',products)
         return (
             <div class="container">
                 {/* start me custum */}

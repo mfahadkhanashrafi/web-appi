@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import actions from '../../redux-saga/header/headerBarOne/acctions';
 
 import BrandBanner from '../../components/banner/brandBanner';
-
-const { loadData } = actions;
 
 class Banner extends Component {
     render() {
@@ -69,17 +65,5 @@ class Banner extends Component {
 }
 
 
-function mapStateToProps(state) {
-    const { test } = state.Banner;
-    return {
-        test
-        // new name of reducer call on top '{all reducer state call seprate by ',' }=this.props.newName'
-        //newName of Reducer :state_._root-wala-reducers_._reducer-ka-name OR {} = state.reducer ka name
-        // SomeoneReducer:state.SomeOne,
-    };
-}
 
-export default connect(mapStateToProps, {
-    // name of funcation whose in action here and top
-    loadData
-})(Banner)
+export default Banner;

@@ -7,19 +7,24 @@ import Header from './containers/header/index';
 import Footer from './containers/footer/index';
 
 class App extends Component {
-
+  componentDidMount(){
+    console.log('Router.App.js',Routes);
+  }
   render() {
+    
     return (
       <Provider store={store}>
         <Router history={history}>
           <div>
             <Header />
             {Routes.map((route, index) => (
+              
               <Route
                 key={index}
                 path={route.path}
                 exact={route.exact}
                 render={(props) => {
+                  console.log('Routeprivate',route.private)
                   if (!route.private) {
                     // console.log('route.path', route)
                     return (<div>
@@ -30,6 +35,10 @@ class App extends Component {
                     return (<div>
                       {/* <p>Private Route</p> */}
                       {route.component(props)}
+                    </div>)
+                  }else{
+                    return (<div>
+                      <p>Else Route</p>
                     </div>)
                   }
                 }}

@@ -48,7 +48,7 @@ const ImageViewProduct = (props) => {
                             {getExtension(image) === 'mp4' ? <video className={'imgLarge'} controls>
                                 <source src={image} type="video/mp4" />
                             </video> : <ReactImageMagnify {...{
-                                imageClassName: 'imgLarge',
+                                imageClassName: 'imgLarge imgLargeImp',
                                 enlargedImageContainerClassName: 'imgLargeT',
                                 smallImage: {
                                     alt: 'Wristwatch by Ted Baker London',
@@ -76,7 +76,7 @@ const ImageViewProduct = (props) => {
         return (
             <div>
                 <div className="row">
-                            <div className="col-md-6">
+                            <div className={props.modal?"col-md-12":"col-md-6"}>
                                 <img src={image} />
                             </div>
                             <div className="col-md-3">

@@ -8,54 +8,45 @@ import fakeData from '../../utils/fakeData';
 import demoData from '../../utils/demoData';
 
 const { loadData } = actions;
+
 var newDemoData = '';
 class DealsForToday extends Component {
     constructor(props) {
         super(props);
-
-        // let filterBy = this.props.fetchBy;
-        // newDemoData = demoData[0].product.filter(function (val) {
-        //     return val.category.deal === filterBy;
-        // });
-        // console.log('newDemoData', newDemoData);
-        // this.props.callData(this.props.fetchBy);
-
         this.props.loadData(this.props.fetchBy);
     }
     render() {
         // console.log('fakeData',fakeData[[this.props.route]])
+        const { loading, error } = this.props;
+        console.log('error',error)
+        if (loading) {
+            return (<div className="container" >
+                <img style={{ height: '350px', width: '100%' }}
+                    src={require('../../assets/icons/loading.gif')} />
+            </div>)
+        }
+        if(error){
+            return<div>
+                <center><strong>Data not fetch succesfully</strong></center>
+            </div>
+        }
+
         return (
             <div className="home-dealToday">
                 <ViewAllRow
-                    route={this.props.route}
-                    dealName={this.props.dealName}
-                    products={fakeData[this.props.route]} />
-                {
-                    this.props.products ?
-                        <Products row={true} details={fakeData[this.props.route] ? 
-                            fakeData[this.props.route] : null} dealName={this.props.dealName} /> : ''
-                }
+                    api={this.props.api}
+                    dealName={this.props.dealName} />
+                <Products />
             </div>
-        //      <div className="home-dealToday">
-        //      <ViewAllRow
-        //          route={this.props.route}
-        //          dealName={this.props.dealName}
-        //          products={newDemoData} />
-        //      {
-        //          newDemoData ?
-        //              <Products row={true} details={newDemoData ? newDemoData : null} dealName={this.props.dealName} /> : ''
-        //      }
-
-        //  </div>
         )
     }
 }
 
 function mapStateToProps(state) {
-    const { test, products } = state.DealsForToday;
-    // console.log(state.DealsForToday)
+    const { products, loading, error } = state.DealsForToday;
+    // console.log(state.DealsForToday.fetchResultArr)
     return {
-        test, products
+        products, loading, error
     }
 }
 

@@ -6,21 +6,23 @@ class product_dft extends Component {
     constructor(props) {
         super(props)
     }
-    
+
     render() {
-        let size = this.props.row;
         return (
             <div className="container">
                 <div className="row">
                     <div className="standardBox">
-                        { this.props.row && this.props.details ?(
-                            this.props.details.slice(0,5).map((items,index)=>{
-                            return <Product key={index} item={items} id={items.category.type+'_'+index} />
-                        }) ): this.props.details ?(this.props.details.map((items, index) => {
-                        return <Product key={index} item={items} id={items.category.type+'_'+index} />
-                        }) ):<Product item={null}  />}
-                       
-                        {/* <Product /> */}
+                        {this.props.details && 'truerow' ? (
+                            this.props.details.slice(0, 5).map((items, index) => {
+                                return <Product />
+                            })
+                        ) : this.props.details ?
+                                (this.props.details.map((items, index) => {
+                                    return <Product />
+                                })
+                                )
+                                : null
+                        }
                     </div>
                 </div>
             </div>

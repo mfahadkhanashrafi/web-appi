@@ -9,7 +9,6 @@ const { loadData } = actions;
 class viewAllRow extends Component {
     constructor(props) {
         super(props);
-
     }
     render() {
         return (
@@ -24,9 +23,11 @@ class viewAllRow extends Component {
                                 <Link to={{
                                     pathname: `offerList/${this.props.route}`, state: {
                                         products: this.props.products,
-                                        dealName:this.props.dealName
+                                        dealName:this.props.dealName,
+                                        api:this.props.api
                                     }
-                                }}>View All <i className="fal fa-long-arrow-right"></i></Link>
+                                }}>View All 
+                                <i className="fal fa-long-arrow-right"></i></Link>
                             </div>
                         </div>
 

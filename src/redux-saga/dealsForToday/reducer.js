@@ -1,10 +1,9 @@
 import actions from './acctions';
 
 const initState = {
-    test: '',
     products: '',
-    fetchResultArr: '',
     loading: false,
+    error: false,
 }
 
 export default function reducre(state = initState, action) {
@@ -27,11 +26,17 @@ export default function reducre(state = initState, action) {
                 loading: true,
             };
         case actions.CALL_DATA_SUCCESS:
-            console.log('action.payload.products', action.payload.fetchResult)
             return {
                 ...state,
                 loading: false,
                 fetchResultArr: action.payload.fetchResult,
+                error:false,
+            };
+        case actions.CALL_DATA_ERROR:
+            return {
+                ...state,
+                loading: false,
+                error:true
             };
         default:
             return state;

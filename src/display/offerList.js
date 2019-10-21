@@ -8,11 +8,7 @@ import Products from '../components/dealsForToday/products/propducts.dft';
 class offerList extends Component {
 
     componentDidMount() {
-        // window.scrollTo({
-        //     top: 100,
-        //     left: 100,
-        //     behavior: 'smooth'
-        // });
+        console.log(!this.props.location.state.api)
         scrollTop();
     }
 
@@ -21,12 +17,17 @@ class offerList extends Component {
             <div>
                 <div style={{ textAlign: 'center' }}>
                     <h4>{this.props.location.state.dealName}</h4>
-                    {this.props.location.state.products ? <div>{this.props.location.state.products.length}Items</div>
+                    {this.props.location.state.products ? 
+                    <div>{this.props.location.state.products.length}Items</div>
                         : 'No Any Product Here'}
                     <hr />
                 </div>
                 {
-                    this.props.location.state.products ? <Products details={this.props.location.state.products} /> : <h1>no-Data-Here</h1>
+                    this.props.location.state.products? 
+                    <Products api={this.props.location.state.api} row={true}
+                      details={this.props.location.state.products} /> : ''
+                    //   <Products api={!this.props.location.state.api} row={true}
+                    //   details={this.props.location.state.products} />
                 }
             </div>
         )

@@ -10,6 +10,9 @@ import fakeData from '../../utils/fakeData';
 const { loadData } = actions;
 
 class TabPanel extends Component {
+    componentDidMount(){
+        this.props.loadData('');
+    }
     render() {
 
         return (<div className="tabs">
