@@ -29,7 +29,7 @@ export default function reducre(state = initState, action) {
             return {
                 ...state,
                 loading: false,
-                fetchResultArr: action.payload.fetchResult,
+                products: action.payload.fetchResult,
                 error:false,
             };
         case actions.CALL_DATA_ERROR:

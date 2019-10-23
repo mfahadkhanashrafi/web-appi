@@ -11,6 +11,30 @@ const routes = [
         component: (props) => <ourComp.MainHome {...props} />
     },
     {
+        path: '/login',
+        exact: true,
+        private: false,
+        component: (props) => <ourComp.AuthO {...props} />
+    },
+    {
+        path: '/signup',
+        exact: true,
+        private: false,
+        component: (props) => <ourComp.AuthO {...props} />
+    },
+    // {
+    //     path: '/login/login',
+    //     exact: true,
+    //     private: false,
+    //     component: (props) => <ourComp.AuthO {...props} />
+    // },
+    // {
+    //     path: '/offerList/login/login',
+    //     exact: true,
+    //     private: false,
+    //     component: (props) => <ourComp.AuthO {...props} />
+    // },
+    {
         path: '/offerList/:offer_name',
         exact: true,
         private: false,
@@ -40,11 +64,18 @@ const routes = [
         private: false,
         component: (props) => <ourComp.ProductDetail {...props} />
     },
+    // {
+    //     path: '/:cat',
+    //     exact: true,
+    //     private: false,
+    //     component: (props) => <ourComp.ViewAllProduct {...props} />
+    // },
+    
     {
-        path: '/:cat',
+        path: '/Test',
         exact: true,
         private: false,
-        component: (props) => <ourComp.ViewAllProduct {...props} />
+        component: (props) => <ourComp.Test {...props} />
     },
 ];
 

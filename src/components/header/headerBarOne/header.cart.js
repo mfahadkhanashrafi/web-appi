@@ -42,7 +42,7 @@ class headerCart extends Component {
                         </li>
                         <li className="inner-menu">
                             <Link to={{
-                                pathname: `login`,
+                                pathname: '/login',
                                 state: {  }
                             }} > Login</Link>
                             {/* <ul>

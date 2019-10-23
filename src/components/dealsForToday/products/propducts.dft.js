@@ -1,27 +1,33 @@
 import React, { Component } from 'react';
 import Product from '../../product/index.product';
+import ProductView from '../../product/productView';
 import fakeData from '../../../utils/fakeData';
 
 class product_dft extends Component {
     constructor(props) {
         super(props)
+        // console.log('Products',this.props)
     }
 
     render() {
+        const {products, newRow} = this.props;
         return (
-            <div className="container">
-                <div className="row">
-                    <div className="standardBox">
-                        {this.props.details && 'truerow' ? (
-                            this.props.details.slice(0, 5).map((items, index) => {
-                                return <Product />
+            <div class="container">
+            <div class="row">
+                <div class="standardBox">
+                        {products && newRow ? (
+                            // console.log('products',products.length)
+                            products.slice(0, 5).map((items, index) => {
+                                return <Product key={index} product_items={items} />
+                                // return <ProductView key={index} item={items} offer={true} />
                             })
-                        ) : this.props.details ?
-                                (this.props.details.map((items, index) => {
-                                    return <Product />
+                        ) : products ?
+                                (products.map((items, index) => {
+                                    return <Product key={index}  product_items={items} />
+                                    // return <ProductView key={index} item={items} offer={true} />
                                 })
                                 )
-                                : null
+                                :null
                         }
                     </div>
                 </div>

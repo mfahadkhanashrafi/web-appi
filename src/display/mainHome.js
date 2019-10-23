@@ -10,7 +10,6 @@ let home = (props) => {
     scrollTop();
     return (
         <div>
-            <AuthO />
             <Banner mainHome={true} />
 
             <DealsForToday

@@ -22,11 +22,11 @@ class viewAllRow extends Component {
                             <div>
                                 <Link to={{
                                     pathname: `offerList/${this.props.route}`, state: {
-                                        products: this.props.products,
-                                        dealName:this.props.dealName,
-                                        api:this.props.api
+                                        dealName: this.props.dealName,
+                                        api: this.props.api,
+                                        apiData: this.props.apiData ? this.props.apiData : null
                                     }
-                                }}>View All 
+                                }}>View All
                                 <i className="fal fa-long-arrow-right"></i></Link>
                             </div>
                         </div>

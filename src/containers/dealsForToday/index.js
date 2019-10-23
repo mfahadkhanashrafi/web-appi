@@ -17,16 +17,16 @@ class DealsForToday extends Component {
     }
     render() {
         // console.log('fakeData',fakeData[[this.props.route]])
-        const { loading, error } = this.props;
-        console.log('error',error)
+        const { loading, error, products, route, api, dealName, } = this.props;
+
         if (loading) {
             return (<div className="container" >
                 <img style={{ height: '350px', width: '100%' }}
                     src={require('../../assets/icons/loading.gif')} />
             </div>)
         }
-        if(error){
-            return<div>
+        if (error) {
+            return <div>
                 <center><strong>Data not fetch succesfully</strong></center>
             </div>
         }
@@ -34,9 +34,11 @@ class DealsForToday extends Component {
         return (
             <div className="home-dealToday">
                 <ViewAllRow
-                    api={this.props.api}
-                    dealName={this.props.dealName} />
-                <Products />
+                    route={route}
+                    api={api}
+                    apiData={products}
+                    dealName={dealName} />
+                <Products products={products} newRow={true} />
             </div>
         )
     }
@@ -44,9 +46,8 @@ class DealsForToday extends Component {
 
 function mapStateToProps(state) {
     const { products, loading, error } = state.DealsForToday;
-    // console.log(state.DealsForToday.fetchResultArr)
     return {
-        products, loading, error
+        products, loading, error,
     }
 }
 

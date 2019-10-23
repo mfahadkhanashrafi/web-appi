@@ -5,10 +5,11 @@ import Axios from 'axios';
 
 const onGetProduct =  (data) =>{
     try {
-        Axios.get('http://192.168.0.104/ecom/api/Products/Get')
+     return( Axios.get('http://192.168.10.6/ecom/api/Products/Get')
+    //  return( Axios.get('http://ntier.co/response.json')
             .then(res => res.data)
-            .catch(error => error)
-    } catch (error) {
+            // .catch(error => console.log(error))
+     )} catch (error) {
         console.log('ERROR')
         // yield put(actions.viewDonorSuccess());
     }
@@ -27,8 +28,6 @@ function* getProduct({ payload }) {
     try {
         const fetchResult = yield call(onGetProduct, data);
         if (fetchResult) {
-            {fetchResult.error?console.log('error true'):console.log('error false')}
-            console.log(fetchResult,"Donor fetch result");
             yield put(
                 actions.fetchedData(
                     fetchResult,
