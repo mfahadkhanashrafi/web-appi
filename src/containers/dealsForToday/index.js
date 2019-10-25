@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import actions from '../../redux-saga/dealsForToday/acctions';
 
+
+import actions from '../../redux-saga/dealsForToday/acctions';
 import ViewAllRow from '../../components/dealsForToday/viewAllRow';
 import Products from '../../components/dealsForToday/products/propducts.dft';
 import fakeData from '../../utils/fakeData';

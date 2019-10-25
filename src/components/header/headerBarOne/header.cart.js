@@ -19,24 +19,24 @@ class headerCart extends Component {
 
                         <li className="sub-inner-menu">
                             <img src={require('../../../assets/cart.png')} alt="" />
-                            <Link>My Cart</Link>
+                            <Link to={{pathname:"/"}}>My Cart</Link>
                             <ul>
                                 <li className="">
-                                    <Link>1 </Link>
+                                    <Link to={{pathname:"/"}}>1 </Link>
                                 </li>
                                 <li className="">
-                                    <Link>2 </Link>
+                                    <Link to={{pathname:"/"}}>2 </Link>
                                 </li>
                             </ul>
                         </li>
                         <li className="sub-inner-menu">
-                            <Link>Accounts</Link>
+                            <Link to={{pathname:"/"}}>Accounts</Link>
                             <ul>
                                 <li className="">
-                                    <Link>1</Link>
+                                    <Link to={{pathname:"/"}}>1</Link>
                                 </li>
                                 <li className="">
-                                    <Link>2</Link>
+                                    <Link to={{pathname:"/"}}>2</Link>
                                 </li>
                             </ul>
                         </li>
@@ -47,10 +47,10 @@ class headerCart extends Component {
                             }} > Login</Link>
                             {/* <ul>
                                 <li className="">
-                                    <Link>Login</Link>
+                                    <Link to={{pathname:"/"}}>Login</Link>
                                 </li>
                                 <li className="">
-                                    <Link></Link>
+                                    <Link to={{pathname:"/"}}></Link>
                                 </li>
                             </ul> */}
                         </li>

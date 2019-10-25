@@ -179,13 +179,13 @@ class HeaderBarTwo extends Component {
                                                     {navSub.subCatChild && navSub.subCatChild.length > 0 ?
                                                         navSub.subCatChild
                                                             .map(navSubChild => {
-                                                                return (<div>
+                                                                return (<div key={'_'+navSubChild} >
                                                                     <li style={{ marginLeft: '5px' }} >
                                                                         {navSubChild.subCat_child_sub ? <strong>{navSubChild.subCatChildName}</strong> : navSubChild.subCatChildName}
                                                                     </li>
                                                                     {navSubChild.subCat_child_sub && navSubChild.subCat_child_sub.length > 0 ?
                                                                         navSubChild.subCat_child_sub.map(navSCS => {
-                                                                            return (<li style={{ marginLeft: '25px' }} > {navSCS.subCat_child_subName} </li>)
+                                                                            return (<li key={'_'+navSCS.subCat_child_subName} style={{ marginLeft: '25px' }} > {navSCS.subCat_child_subName} </li>)
                                                                         }) : null}
                                                                 </div>)
                                                             }) : null}
