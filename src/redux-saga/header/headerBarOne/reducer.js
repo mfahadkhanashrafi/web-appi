@@ -1,7 +1,9 @@
 import actions from './acctions';
 
 const initState = {
-    test:''
+    test:'',
+    cartAdded:[],
+    cartLenght:""
 }
 
 export default function reducre(state = initState,{type,payload}) {
@@ -10,6 +12,12 @@ export default function reducre(state = initState,{type,payload}) {
             return {
                 ...state,
                 test:'Fahad Test'
+            }    
+        case actions.ADDED_CART:
+            return {
+                ...state,
+                cartAdded:payload.cartAdded,
+                cartLenght:payload.cartLenght,
             }    
         default:
            return state;

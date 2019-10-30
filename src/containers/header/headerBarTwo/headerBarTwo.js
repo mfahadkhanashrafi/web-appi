@@ -5,9 +5,13 @@ import actions from '../../../redux-saga/header/headerBarTwo/acctions';
 import fakeData from '../../../utils/fakeData';
 import demoData from '../../../utils/demoData';
 import menuDemoData from '../../../utils/menuDemoData';
+import genrateMenu from '../../../utils/menufunction';
+import genrateJson from '../../../utils/jsonFun';
 
 const { loadData } = actions;
 const DATA = (demoData[0].data);
+
+
 
 class HeaderBarTwo extends Component {
     constructor() {
@@ -17,8 +21,10 @@ class HeaderBarTwo extends Component {
             mouseEnter: false,
         }
     }
+
     componentDidMount() {
-        // this.genrateMenu();
+        // genrateMenu(menuDemoData);
+        // genrateJson(menuDemoData);
         // this.handleJson();
     }
 
@@ -43,14 +49,14 @@ class HeaderBarTwo extends Component {
             var newObj = { "catName": category };
             newObj['children'] = [];
             if (val.parent_id != val.id) {
-                        root[category] = newObj;
-                        console.log('parent')
-                    } else {
-                        // XXX - if the parent isn't defined first this will fail
-                        var parent = parentCache[val.parent_id];
-                        console.log('notparent')
-                        // parent.children.push(newObj);
-                    }
+                root[category] = newObj;
+                console.log('parent')
+            } else {
+                // XXX - if the parent isn't defined first this will fail
+                var parent = parentCache[val.parent_id];
+                console.log('notparent')
+                // parent.children.push(newObj);
+            }
             // data.forEach(element => {
             //     if (element.parent_id != val.id) {
             //         root[category] = newObj;
@@ -69,28 +75,6 @@ class HeaderBarTwo extends Component {
         console.log((root));
     }
 
-    genrateMenu = () => {
-        var root = document.createElement('ul'),
-            currentParentId = 0,
-            currentParentUl = root;
-
-        const categories = menuDemoData.sort((a, b) => (a.categoryParentId < b.categoryParentId) ? -1 : 0)
-
-        for (var i = 1; i < categories.length; ++i) {
-            if (categories[i].categoryParentId !== currentParentId) {
-                // console.log(categories[i].categoryName)
-                currentParentId = categories[i].categoryParentId;
-                currentParentUl = document.createElement('ul');
-                root.getElementsByClassName('category_' + currentParentId)[0]
-                    .appendChild(currentParentUl);
-            }
-            currentParentUl.innerHTML += '<li class="category_' + categories[i].categoryId + '">' + categories[i].categoryName + '</li>';
-        }
-        var cats = document.getElementById('cats');
-        if (cats.firstChild) { cats.removeChild(cats.firstChild); }
-        cats.appendChild(root);
-    }
-
     onMouseEnterHandle = (_pid) => {
         let childArr = [], subChild = [], parrent = {};
         this.setState({ mouseEnter: true });
@@ -106,7 +90,7 @@ class HeaderBarTwo extends Component {
     }
 
     menuValue = () => {
-        DATA.map((navVal,index) => {
+        DATA.map((navVal, index) => {
             return (
                 < li key={index} >
                     <Link>
@@ -179,13 +163,13 @@ class HeaderBarTwo extends Component {
                                                     {navSub.subCatChild && navSub.subCatChild.length > 0 ?
                                                         navSub.subCatChild
                                                             .map(navSubChild => {
-                                                                return (<div key={'_'+navSubChild} >
+                                                                return (<div key={'_' + navSubChild} >
                                                                     <li style={{ marginLeft: '5px' }} >
                                                                         {navSubChild.subCat_child_sub ? <strong>{navSubChild.subCatChildName}</strong> : navSubChild.subCatChildName}
                                                                     </li>
                                                                     {navSubChild.subCat_child_sub && navSubChild.subCat_child_sub.length > 0 ?
                                                                         navSubChild.subCat_child_sub.map(navSCS => {
-                                                                            return (<li key={'_'+navSCS.subCat_child_subName} style={{ marginLeft: '25px' }} > {navSCS.subCat_child_subName} </li>)
+                                                                            return (<li key={'_' + navSCS.subCat_child_subName} style={{ marginLeft: '25px' }} > {navSCS.subCat_child_subName} </li>)
                                                                         }) : null}
                                                                 </div>)
                                                             }) : null}
@@ -207,7 +191,7 @@ class HeaderBarTwo extends Component {
                     <div className="col-lg-12">
                         <div className="primary-menu">
                             <ul id="cats">
-                                {levelOneCat}
+                                {/* {levelOneCat} */}
                             </ul>
                         </div>
                         <div className="top-nav-menu float-right">

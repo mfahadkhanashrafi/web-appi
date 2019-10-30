@@ -1,14 +1,20 @@
 import React, { Component } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, ButtonGroup } from 'reactstrap';
+import { connect } from 'react-redux';
+
+
+import actions from '../../redux-saga/header/headerBarOne/acctions';
 import { Link, Redirect } from 'react-router-dom';
 import { store, history } from '../../redux-saga/store/store';
+
+const { addToCart } = actions;
 
 class Product extends Component {
     constructor(props) {
         super(props);
         this.state = {
             modalVisibal: false,
-            loginRedirect:false,
+            loginRedirect: false,
         }
     }
 
@@ -22,21 +28,19 @@ class Product extends Component {
     addCartHandler = (modalVisibality, itemDetail) => {
         let checkLogin = localStorage.getItem('login_detail');
         if (checkLogin) {
-            console.log('True')
-            console.log(checkLogin, 'Modal item detail', itemDetail)
-            alert('Thank you for')
+            this.props.addToCart(itemDetail);
             this.setModalVisibal(modalVisibality);
         } else {
-            this.setState({loginRedirect:true})
-            
+            this.setState({ loginRedirect: true })
+
         }
     }
     //props
     //product_items
     render() {
         const { modalVisibal } = this.state;
-        if(this.state.loginRedirect){
-            return <Redirect  to={{pathname:'/login'}} />
+        if (this.state.loginRedirect) {
+            return <Redirect to={{ pathname: '/login' }} />
         }
         // console.log(this.props.item)
         if (this.props.product_items === null) {
@@ -101,5 +105,19 @@ class Product extends Component {
         }
     }
 }
+function mapStateToProps(state) {
+    const { cartAdded } = state.Header;
+    // console.log('Change cart props',state)
+    return {
+        cartAdded
+        // new name of reducer call on top '{all reducer state call seprate by ',' }=this.props.newName'
+        //newName of Reducer :state_._root-wala-reducers_._reducer-ka-name OR {} = state.reducer ka name
+        // SomeoneReducer:state.SomeOne,
+    };
+}
 
-export default Product;
+export default connect(mapStateToProps, {
+    // name of funcation whose in action here and top
+    addToCart
+})(Product)
+// export default Product;
