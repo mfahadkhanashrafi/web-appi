@@ -191,7 +191,7 @@ class HeaderBarTwo extends Component {
                     <div className="col-lg-12">
                         <div className="primary-menu">
                             <ul id="cats">
-                                {/* {levelOneCat} */}
+                                {levelOneCat}
                             </ul>
                         </div>
                         <div className="top-nav-menu float-right">
