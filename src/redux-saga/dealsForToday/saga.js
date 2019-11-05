@@ -28,6 +28,7 @@ function* getProduct({ payload }) {
     try {
         const fetchResult = yield call(onGetProduct, data);
         if (fetchResult) {
+            // console.log('saga',fetchResult)
             yield put(
                 actions.fetchedData(
                     fetchResult,

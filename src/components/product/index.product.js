@@ -82,7 +82,7 @@ class Product extends Component {
                                 <Button color="primary" onClick={() => this.addCartHandler(modalVisibal, this.props.product_items)}>Buy-Now</Button>
                             </ModalFooter>
                         </Modal>
-                        <div className="standardBox1">
+                        <div className="standardBox1 standardBox1Fahad">
                             <div className="boxImage">
                                 {/* <img src={require('../../assets/products/3.png')} alt="" /> */}
                                 <img src={ProductImages[0].ImagePath} alt="" />

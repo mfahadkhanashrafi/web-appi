@@ -5,13 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
 
-axios.interceptors.request.use(req => {
-    console.log('requst', req)
-});
 
-axios.interceptors.response.use(res => {
-    console.log('responce', res)
-});
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
